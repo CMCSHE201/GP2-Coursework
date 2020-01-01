@@ -39,6 +39,8 @@ private:
 	Audio audioDevice;
 
 	float counter;
+	float rot;
+
 	unsigned int whistle;
 	unsigned int backGroundMusic;
 

@@ -42,8 +42,8 @@ void MainGame::initSystems()
 	
 	transform.SetPos(glm::vec3(0, 0.5, 0));
 	transform.SetScale(glm::vec3(0.01, 0.01, 0.01));
-	mesh1.loadModel("..\\res\\wheel.obj");
-	mesh2.loadModel("..\\res\\monkey3.obj");
+	mesh1.loadModel("..\\res\\rocket.obj");
+	//mesh2.loadModel("..\\res\\monkey3.obj");
 	
 	myCamera.initCamera(glm::vec3(0, 0, -5), 70.0f, (float)_gameDisplay.getWidth()/_gameDisplay.getHeight(), 0.01f, 1000.0f);
 	myCamera.Position_Camera(0, 0, -0.5f, 0, 0.5f, 0, 0, 1, 0);
@@ -60,6 +60,7 @@ void MainGame::gameLoop()
 		drawGame();
 		collision(mesh1.getSpherePos(), mesh1.getSphereRadius(), mesh2.getSpherePos(), mesh2.getSphereRadius());
 		playAudio(backGroundMusic, glm::vec3(0.0f,0.0f,0.0f));
+
 	}
 }
 
@@ -93,12 +94,12 @@ void MainGame::processInput()
 			}
 			case SDLK_a:
 			{
-				//transform.SetRot(glm::vec3(mesh1.))
+				transform.SetRot(glm::vec3(transform.GetRot()->x, transform.GetRot()->y, transform.GetRot()->z - 1));
 				break;
 			}
 			case SDLK_d:
 			{
-				transform.SetPos(glm::vec3(mesh1.getSpherePos().x, mesh1.getSpherePos().y + 0.05, mesh1.getSpherePos().z + 0.01));
+				transform.SetRot(glm::vec3(transform.GetRot()->x, transform.GetRot()->y, transform.GetRot()->z + 1));
 				break;
 			}
 			case SDLK_SPACE:
@@ -106,6 +107,9 @@ void MainGame::processInput()
 				transform.SetPos(glm::vec3(0, 0, 0));
 				break;
 			}
+			case SDLK_ESCAPE:
+				_gameState = GameState::EXIT;
+				break;
 			}
 		}
 	}
