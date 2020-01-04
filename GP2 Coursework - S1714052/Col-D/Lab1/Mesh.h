@@ -22,6 +22,8 @@ private:
 	glm::vec3 pos;
 	glm::vec2 texCoord;
 	glm::vec3 normal;
+
+	bool move;
 };
 
 struct Sphere
@@ -66,6 +68,7 @@ public:
 	void updateSphereData(glm::vec3 pos, float radius);
 	glm::vec3 getSpherePos() { return meshSphere.GetPos(); }
 	float getSphereRadius() { return meshSphere.GetRadius(); }
+	void Move(int dist);
 
 private:
 

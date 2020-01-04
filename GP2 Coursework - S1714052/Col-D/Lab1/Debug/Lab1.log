@@ -1,2 +1,4 @@
 ﻿  MainGame.cpp
+C:\Users\maxm2\Documents\GitHub\GP2-Coursework\GP2 Coursework - S1714052\Col-D\Lab1\MainGame.cpp(221,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\maxm2\Documents\GitHub\GP2-Coursework\GP2 Coursework - S1714052\Col-D\Lab1\MainGame.cpp(248,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Lab1.vcxproj -> C:\Users\maxm2\Documents\GitHub\GP2-Coursework\GP2 Coursework - S1714052\Col-D\Debug\Lab1.exe

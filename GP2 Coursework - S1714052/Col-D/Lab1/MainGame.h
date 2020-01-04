@@ -33,17 +33,29 @@ private:
 
 	Display _gameDisplay;
 	GameState _gameState;
-	Mesh mesh1;
-	Mesh mesh2;
+	Mesh player;
+	Mesh rock1;
+	Mesh rock2;
+	Mesh rock3;
+	Mesh water;
 	Camera myCamera;
 	Audio audioDevice;
 
 	float counter;
-	float rot;
+	float counter2;
+	float counter3;
+	float fullTime;
 
-	unsigned int whistle;
+	bool shoot;
+	bool hit;
+	bool left;
+	bool right;
+	bool up;
+	bool down;
+
+	glm::vec2 bulletPos;
+
+	unsigned int collisionSound;
 	unsigned int backGroundMusic;
-
-	double deltaTime;
 };
 
